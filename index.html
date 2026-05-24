@@ -6,10 +6,10 @@
     <title>Café & Barismo | Experiencia de Especialidad</title>
     <meta name="description" content="Descubre el mundo del café y el barismo: historia, técnicas, talleres y arte latte.">
     
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
@@ -28,6 +28,9 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'gold-soft': '0 10px 30px -10px rgba(197, 160, 89, 0.15)',
                     }
                 }
             }
@@ -46,37 +49,42 @@
     </style>
 </head>
 
-<body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased overflow-x-hidden">
 
+    <!-- Navegación -->
     <nav class="fixed w-full z-50 transition-all duration-300 glass-nav">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3">
-                <img src="./assets/img/logo.png.jpeg" alt="Logo Café & Barismo" class="w-10 h-10 rounded-full border border-gold/30">
-                <span class="font-serif text-xl tracking-wider text-gold">Café & Barismo</span>
+            <!-- 1. Logo Principal con Microinteracción -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <img src="./assets/img/logo.png.jpeg" 
+                     alt="Logo Café & Barismo" 
+                     class="w-10 h-10 rounded-full border border-gold/30 transition-all duration-300 transform group-hover:scale-110 group-hover:border-gold">
+                <span class="font-serif text-xl tracking-wider text-gold transition-all duration-300 group-hover:translate-x-1">Café & Barismo</span>
             </a>
             
             <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
                 <a href="#about" class="hover:text-gold transition-colors">Sobre el café</a>
                 <a href="#services" class="hover:text-gold transition-colors">Talleres</a>
                 <a href="#portfolio" class="hover:text-gold transition-colors">Galería</a>
-                <a href="#contact" class="px-4 py-2 bg-gold/10 border border-gold/50 text-gold rounded-full hover:bg-gold hover:text-zinc-950 transition-all">Contacto</a>
+                <a href="#contact" class="px-4 py-2 bg-gold/10 border border-gold/50 text-gold rounded-full hover:bg-gold hover:text-zinc-950 transition-all transform hover:scale-105">Contacto</a>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src="./assets/img/señora con cafe.jpg" alt="Foto principal de café" class="absolute inset-0 w-full h-full object-cover opacity-60">
+        <img src="./assets/img/señora con cafe.jpg" alt="Foto principal de café" class="absolute inset-0 w-full h-full object-cover opacity-60 transform scale-105 animate-[pulse_10s_infinite]">
         <div class="absolute inset-0 hero-gradient"></div>
         
         <div class="relative z-10 text-center px-4 max-w-4xl">
-            <span class="text-gold uppercase tracking-[0.3em] text-sm mb-4 block">Desde el origen hasta tu taza</span>
+            <span class="text-gold uppercase tracking-[0.3em] text-sm mb-4 block animate-pulse">Desde el origen hasta tu taza</span>
             <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight">El arte del café y el <span class="italic text-gold">barismo</span></h1>
             <p class="text-lg md:text-xl text-zinc-300 mb-10 font-light max-w-2xl mx-auto leading-relaxed">
                 Explora sabores, técnicas y experiencias únicas diseñadas para los paladares más exigentes.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#services" class="bg-gold text-zinc-950 px-8 py-4 rounded-full font-semibold uppercase text-xs tracking-widest hover:bg-white transition-all">Explorar Talleres</a>
-                <a href="#about" class="border border-zinc-500 px-8 py-4 rounded-full font-semibold uppercase text-xs tracking-widest hover:bg-zinc-100 hover:text-zinc-950 transition-all">Nuestra Historia</a>
+                <a href="#services" class="bg-gold text-zinc-950 px-8 py-4 rounded-full font-semibold uppercase text-xs tracking-widest hover:bg-white transition-all transform hover:-translate-y-1">Explorar Talleres</a>
+                <a href="#about" class="border border-zinc-500 px-8 py-4 rounded-full font-semibold uppercase text-xs tracking-widest hover:bg-zinc-100 hover:text-zinc-950 transition-all transform hover:-translate-y-1">Nuestra Historia</a>
             </div>
         </div>
         
@@ -86,164 +94,190 @@
     </header>
 
     <main>
+        <!-- Sección Sobre el Café -->
         <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="relative">
                     <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-gold/50"></div>
                     <h2 class="text-4xl font-serif mb-8 leading-tight">Más que una bebida,<br><span class="text-gold">un ritual de especialidad.</span></h2>
                     <div class="space-y-6 text-zinc-400 leading-relaxed text-lg">
-                        <p>
-                            El café de especialidad nace del respectó por la tierra. Cada grano cuenta una historia de origen, altitud y un proceso de tostado artesanal que libera notas complejas y perfiles únicos.
-                        </p>
-                        <p>
-                            Nuestra misión es elevar la cultura del barismo, transformando la preparación diaria en un acto de precisión técnica y expresión creativa.
-                        </p>
+                        <p>El café de especialidad nace del respeto por la tierra. Cada grano cuenta una historia de origen, altitud y un proceso artesanal único.</p>
+                        <p>Nuestra misión es elevar la cultura del barismo, transformando la preparación diaria en un acto de precisión técnica.</p>
                     </div>
                 </div>
+                <!-- 2. Cuadrados de Estadísticas con fondos dinámicos -->
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800 flex flex-col justify-center items-center text-center transform hover:-translate-y-2 transition-transform">
-                        <span class="text-gold text-3xl mb-2 font-serif italic">100%</span>
-                        <p class="text-xs uppercase tracking-widest">Arábica Premium</p>
+                    <div class="group relative overflow-hidden bg-zinc-900 p-8 rounded-2xl border border-zinc-800 flex flex-col justify-center items-center text-center transition-all duration-500 hover:-translate-y-2">
+                        <img src="./assets/img/granos-cafe.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700" alt="Granos de café">
+                        <div class="relative z-10">
+                            <span class="text-gold text-4xl mb-2 font-serif italic block">100%</span>
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-white">Arábica Premium</p>
+                        </div>
                     </div>
-                    <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800 flex flex-col justify-center items-center text-center mt-8 transform hover:-translate-y-2 transition-transform">
-                        <span class="text-gold text-3xl mb-2 font-serif italic">+500</span>
-                        <p class="text-xs uppercase tracking-widest">Alumnos Graduados</p>
+                    <div class="group relative overflow-hidden bg-zinc-900 p-8 rounded-2xl border border-zinc-800 flex flex-col justify-center items-center text-center mt-8 transition-all duration-500 hover:-translate-y-2">
+                        <img src="./assets/img/taller-alumnos.jpg" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700" alt="Alumnos">
+                        <div class="relative z-10">
+                            <span class="text-gold text-4xl mb-2 font-serif italic block">+500</span>
+                            <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-white">Alumnos Graduados</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Sección Talleres -->
         <section id="services" class="py-24 bg-zinc-900/50">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-serif mb-4">Nuestros Talleres</h2>
-                    <p class="text-zinc-400 max-w-xl mx-auto">Formación profesional y amateur para dominar el arte de la extracción perfecta.</p>
+                    <p class="text-zinc-400 max-w-xl mx-auto">Formación profesional para dominar la extracción perfecta.</p>
                 </div>
 
+                <!-- 3. Tarjetas de Talleres con efectos dinámicos -->
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-zinc-950 p-8 rounded-2xl border border-zinc-800 hover:border-gold/30 transition-all group">
-                        <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mb-6 text-gold group-hover:bg-gold group-hover:text-zinc-950 transition-all">
+                    <!-- Taller 1 -->
+                    <div class="bg-zinc-950 p-8 rounded-2xl border border-zinc-800 transition-all duration-500 hover:-translate-y-4 hover:shadow-gold-soft hover:border-gold/40 group">
+                        <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mb-6 text-gold group-hover:bg-gold group-hover:text-zinc-950 transition-all duration-300">
                             <i class="fa-solid fa-mug-hot"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">Introducción al Barismo</h3>
-                        <p class="text-zinc-400 text-sm mb-6 leading-relaxed">Aprende los fundamentos: desde el calibrado del molino hasta la extracción del espresso perfecto.</p>
+                        <h3 class="text-xl font-semibold mb-3 group-hover:text-gold transition-colors">Introducción al Barismo</h3>
+                        <p class="text-zinc-400 text-sm mb-6 leading-relaxed">Aprende los fundamentos: desde el calibrado del molino hasta el espresso perfecto.</p>
                         <div class="flex justify-between items-center pt-6 border-t border-zinc-800">
                             <span class="text-gold font-serif text-xl">$45.00</span>
-                            <a href="#contact" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Info <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            <a href="#contact" class="text-xs uppercase tracking-widest font-bold flex items-center group-hover:gap-2 transition-all">Info <i class="fa-solid fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
 
-                    <div class="bg-zinc-950 p-8 rounded-2xl border border-gold/20 shadow-xl shadow-gold/5 transform scale-105 group relative overflow-hidden">
+                    <!-- Taller 2 (Destacado) -->
+                    <div class="bg-zinc-950 p-8 rounded-2xl border border-gold/30 shadow-xl transform scale-105 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_15px_40px_-10px_rgba(197,160,89,0.3)] group relative overflow-hidden">
                         <div class="absolute top-0 right-0 bg-gold text-zinc-950 px-4 py-1 text-[10px] font-bold uppercase tracking-widest">Popular</div>
-                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mb-6 text-zinc-950">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mb-6 text-zinc-950 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-droplet"></i>
                         </div>
                         <h3 class="text-xl font-semibold mb-3">Arte Latte Avanzado</h3>
-                        <p class="text-zinc-400 text-sm mb-6 leading-relaxed">Domina la textura de la leche y crea diseños complejos: rosetas, cisnes y patrones de vertido libre.</p>
+                        <p class="text-zinc-400 text-sm mb-6 leading-relaxed">Domina la textura de la leche y crea diseños complejos: rosetas y cisnes.</p>
                         <div class="flex justify-between items-center pt-6 border-t border-zinc-800">
                             <span class="text-gold font-serif text-xl">$60.00</span>
-                            <a href="#contact" class="text-xs uppercase tracking-widest font-bold hover:text-zinc-300">Info <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            <a href="#contact" class="text-xs uppercase tracking-widest font-bold flex items-center">Info <i class="fa-solid fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
 
-                    <div class="bg-zinc-950 p-8 rounded-2xl border border-zinc-800 hover:border-gold/30 transition-all group">
+                    <!-- Taller 3 -->
+                    <div class="bg-zinc-950 p-8 rounded-2xl border border-zinc-800 transition-all duration-500 hover:-translate-y-4 hover:shadow-gold-soft hover:border-gold/40 group">
                         <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mb-6 text-gold group-hover:bg-gold group-hover:text-zinc-950 transition-all">
                             <i class="fa-solid fa-filter"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">Métodos de Filtrado</h3>
-                        <p class="text-zinc-400 text-sm mb-6 leading-relaxed">V60, Chemex y Aeropress. Entiende las variables de infusión para resaltar la acidez y dulzor.</p>
+                        <h3 class="text-xl font-semibold mb-3 group-hover:text-gold transition-colors">Métodos de Filtrado</h3>
+                        <p class="text-zinc-400 text-sm mb-6 leading-relaxed">V60, Chemex y Aeropress. Entiende las variables para resaltar la acidez.</p>
                         <div class="flex justify-between items-center pt-6 border-t border-zinc-800">
                             <span class="text-gold font-serif text-xl">$50.00</span>
-                            <a href="#contact" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Info <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                            <a href="#contact" class="text-xs uppercase tracking-widest font-bold flex items-center">Info <i class="fa-solid fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Sección Galería -->
         <section id="portfolio" class="py-24 px-6 max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-serif mb-12">El Arte en Imágenes</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="overflow-hidden rounded-2xl aspect-square">
-                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=600" alt="Detalle Café" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+            <h2 class="text-4xl font-serif mb-12 italic">El Arte en Imágenes</h2>
+            <!-- 4. Fotos de Galería con Zoom Interno y Filtros -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="group overflow-hidden rounded-2xl aspect-square relative cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=600" 
+                         alt="Detalle Café" 
+                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-110">
+                    <div class="absolute inset-0 bg-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="overflow-hidden rounded-2xl aspect-square">
-                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=600" alt="Barista Trabajando" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+                <div class="group overflow-hidden rounded-2xl aspect-square relative cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=600" 
+                         alt="Barista Trabajando" 
+                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-110">
+                    <div class="absolute inset-0 bg-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="overflow-hidden rounded-2xl aspect-square">
-                    <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&q=80&w=600" alt="Arte Latte" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+                <div class="group overflow-hidden rounded-2xl aspect-square relative cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&q=80&w=600" 
+                         alt="Arte Latte" 
+                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-110">
+                    <div class="absolute inset-0 bg-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div class="overflow-hidden rounded-2xl aspect-square">
-                    <img src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&q=80&w=600" alt="Grano de Café" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+                <div class="group overflow-hidden rounded-2xl aspect-square relative cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&q=80&w=600" 
+                         alt="Grano de Café" 
+                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-110">
+                    <div class="absolute inset-0 bg-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
             </div>
         </section>
 
+        <!-- Sección Contacto -->
         <section id="contact" class="py-24 bg-zinc-900/30 border-t border-zinc-900">
             <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
                 <div>
-                    <h2 class="text-4xl font-serif mb-6 italic">Reservá tu lugar</h2>
-                    <p class="text-zinc-400 mb-8">¿Tenés dudas sobre nuestros cursos o querés contratar un servicio de barra para eventos? Escribinos.</p>
+                    <h2 class="text-4xl font-serif mb-6 italic text-gold">Reservá tu lugar</h2>
+                    <p class="text-zinc-400 mb-8">¿Tenés dudas sobre nuestros cursos? Escribinos y comenzá tu viaje en el café de especialidad.</p>
                     
                     <div class="space-y-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center text-gold">
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-zinc-950 transition-all">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
-                            <span>Calle Gourmet 123, Ciudad del Café</span>
+                            <span class="text-zinc-300">Calle Gourmet 123, Ciudad del Café</span>
                         </div>
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center text-gold">
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-zinc-950 transition-all">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
-                            <span>hola@cafebarismo.com</span>
+                            <span class="text-zinc-300">hola@cafebarismo.com</span>
                         </div>
                     </div>
                 </div>
 
-                <form class="space-y-4 bg-zinc-900 p-8 rounded-3xl border border-zinc-800">
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-500">Nombre Completo</label>
-                        <input type="text" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 focus:border-gold outline-none transition-colors">
+                <form class="space-y-4 bg-zinc-900 p-8 rounded-3xl border border-zinc-800 shadow-2xl">
+                    <div class="group">
+                        <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-500 group-focus-within:text-gold transition-colors">Nombre Completo</label>
+                        <input type="text" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 focus:border-gold outline-none transition-all">
                     </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-500">Email</label>
-                        <input type="email" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 focus:border-gold outline-none transition-colors">
+                    <div class="group">
+                        <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-500 group-focus-within:text-gold transition-colors">Email</label>
+                        <input type="email" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 focus:border-gold outline-none transition-all">
                     </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-500">Mensaje</label>
-                        <textarea rows="4" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 focus:border-gold outline-none transition-colors"></textarea>
+                    <div class="group">
+                        <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-500 group-focus-within:text-gold transition-colors">Mensaje</label>
+                        <textarea rows="4" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 focus:border-gold outline-none transition-all"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-gold text-zinc-950 font-bold py-4 rounded-xl uppercase text-xs tracking-[0.2em] hover:bg-white transition-all">Enviar Mensaje</button>
+                    <button type="submit" class="w-full bg-gold text-zinc-950 font-bold py-4 rounded-xl uppercase text-xs tracking-[0.2em] hover:bg-white transition-all transform active:scale-95 shadow-lg shadow-gold/10">Enviar Mensaje</button>
                 </form>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-zinc-950 py-16 border-t border-zinc-900 text-center">
         <div class="container mx-auto px-6">
-            <img src="./assets/img/logo.png.jpeg" alt="Logo Café & Barismo" class="w-20 mx-auto mb-8 rounded-full filter grayscale hover:grayscale-0 transition-all duration-500">
+            <img src="./assets/img/logo.png.jpeg" alt="Logo Café & Barismo" class="w-20 mx-auto mb-8 rounded-full filter grayscale hover:grayscale-0 hover:scale-110 transition-all duration-700">
             <div class="flex justify-center space-x-6 mb-8 text-zinc-500">
-                <a href="#" class="hover:text-gold transition-colors"><i class="fa-brands fa-instagram text-2xl"></i></a>
-                <a href="#" class="hover:text-gold transition-colors"><i class="fa-brands fa-facebook text-2xl"></i></a>
-                <a href="#" class="hover:text-gold transition-colors"><i class="fa-brands fa-youtube text-2xl"></i></a>
+                <a href="#" class="hover:text-gold transition-colors transform hover:-translate-y-1"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="#" class="hover:text-gold transition-colors transform hover:-translate-y-1"><i class="fa-brands fa-facebook text-2xl"></i></a>
+                <a href="#" class="hover:text-gold transition-colors transform hover:-translate-y-1"><i class="fa-brands fa-youtube text-2xl"></i></a>
             </div>
-            <p class="text-zinc-600 text-sm tracking-widest uppercase">&copy; 2026 Café & Barismo. <br class="md:hidden"> Todos los derechos reservados.</p>
+            <p class="text-zinc-600 text-sm tracking-widest uppercase font-light">&copy; 2025 Café & Barismo. <br class="md:hidden"> Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5492267471690?text=Hola%20Pablo!%20Estuve%20viendo%20la%20página%20de%20Café%20%26%20Barismo%20y%20me%20gustaría%20pedirte%20info%20por%20los%20talleres." 
+    <!-- Botón WhatsApp Oficial -->
+    <a href="https://wa.me/5492267471690?text=Hola%20Pablo!%20Me%20interesan%20los%20talleres." 
        target="_blank" 
-       class="fixed bottom-6 right-6 bg-[#25d366] hover:bg-[#20ba5a] text-white rounded-full shadow-2xl z-50 transition-all duration-300 hover:scale-110 flex items-center justify-center w-16 h-16 text-2xl"
+       class="fixed bottom-6 right-6 bg-[#25d366] hover:bg-[#20ba5a] text-white rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.3)] z-50 transition-all duration-300 hover:scale-110 flex items-center justify-center w-16 h-16 text-3xl"
        aria-label="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <script>
-        // Efecto scroll en Navbar
+        // Smooth Navbar Shrink
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
+            if (window.scrollY > 100) {
                 nav.classList.add('py-2', 'shadow-2xl');
                 nav.classList.remove('py-4');
             } else {
